@@ -15,12 +15,10 @@
       <stack class="bucktooth-stack"
              xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
         <titlebar class="bucktooth-titlebar"/>
-        <hbox mousethrough="always" class="bucktooth-buttonbar">
-          <hbox class="bucktooth-buttonbox">
-            <toolbarbutton class="bucktooth-buttonmin" mousethrough="never"/>
-            <toolbarbutton class="bucktooth-buttonmax" mousethrough="never"/>
-            <toolbarbutton class="bucktooth-buttonclose" mousethrough="never"/>
-          </hbox>
+        <hbox class="bucktooth-buttonbar" mousethrough="always">
+          <toolbarbutton class="bucktooth-buttonmin" mousethrough="never"/>
+          <toolbarbutton class="bucktooth-buttonmax" mousethrough="never"/>
+          <toolbarbutton class="bucktooth-buttonclose" mousethrough="never"/>
         </hbox>
         <hbox mousethrough="always" class="bucktooth-menubar">
           <button type="menu"
@@ -38,13 +36,19 @@
     <implementation>
       <constructor>
       <![CDATA[
+        // turn on Vista/Windows 7 extending content area into the non-client
         document.documentElement.setAttribute("chromemargin", "0, -1, -1 ,-1");
+
+        // ugly Mozilla hack to enable sysmenu on right clicking the draggable
+        document.getAnonymousElementByAttribute(this,
+                                                "class",
+                                                "bucktooth-titlebar")
+                .addEventListener("MozMouseHittest",
+                                  function(e) e.preventDefault(),
+                                  false);
       ]]>
       </constructor>
     </implementation>
-
-    <handlers>
-    </handlers>
   </binding>
 
 </bindings>
