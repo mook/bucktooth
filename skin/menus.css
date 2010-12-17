@@ -12,6 +12,11 @@
   -moz-binding: url(chrome://bucktooth/content/menu-button.xml#menu-button);
 }
 
+#blistMenubar[sizemode="maximized"] {
+  /* this does things with margins */
+  -moz-appearance: -moz-window-titlebar-maximized;
+}
+
 #mainToolbox #blistMenubar > menu {
   -moz-binding: url(chrome://global/content/bindings/menu.xml#menu);
 }
@@ -42,7 +47,7 @@
 
 .bucktooth-button {
   -moz-appearance: none;
-  margin: -1px 0 0 16px;
+  margin: -2px 0 0 16px;
   padding: 0;
   background: -moz-linear-gradient(hsl(36,91%,65%), hsl(26,91%,44%) 95%);
   background-clip: padding-box;

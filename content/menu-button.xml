@@ -46,6 +46,20 @@
                 .addEventListener("MozMouseHittest",
                                   function(e) e.preventDefault(),
                                   false);
+
+        // update the window size state
+        var self = this;
+        const SIZE_MAP = {
+          1: "maximized",
+          2: "minimized",
+          3: "normal",
+          4: "fullscreen"
+        };
+        window.addEventListener("resize",
+                                function()
+                                  self.setAttribute("sizemode",
+                                                    SIZE_MAP[window.windowState]),
+                                false);
       ]]>
       </constructor>
     </implementation>
