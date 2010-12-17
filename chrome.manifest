@@ -1,0 +1,7 @@
+content bucktooth content/
+skin bucktooth classic/1.0 skin/
+locale bucktooth en-US locale/en-US/
+
+# overlay chrome://instantbird/content/menus.xul chrome://bucktooth/content/menu-overlay.xul
+style chrome://instantbird/content/menus.xul chrome://bucktooth/skin/menus.css
+

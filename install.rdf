@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- vim: set sw=2 : -->
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>bucktooth@instantbird.extensions.mook.wordpress.com</em:id>
+    <em:name>Bucktooth</em:name>
+    <em:version>0.0.0.20101216</em:version>
+    <em:description>Menu button for Instantbird</em:description>
+    <em:creator>Mook</em:creator>
+    <!-- <em:homepageURL></em:homepageURL> -->
+    <em:type>2</em:type> <!-- type=extension --> 
+
+    <em:targetApplication>
+      <!-- Instantbird -->
+      <Description>
+        <em:id>{33cb9019-c295-46dd-be21-8c4936574bee}</em:id>
+        <em:minVersion>0.3a1pre</em:minVersion>
+        <em:maxVersion>0.3a1pre</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

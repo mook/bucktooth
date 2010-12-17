@@ -1,0 +1,105 @@
+:root {
+  -moz-appearance: -moz-win-borderless-glass;
+  background: transparent;
+}
+
+#mainToolbox {
+  -moz-appearance: none;
+  background: transparent;
+}
+
+#mainToolbox #blistMenubar {
+  -moz-binding: url(chrome://bucktooth/content/menu-button.xml#menu-button);
+}
+
+#mainToolbox #blistMenubar > menu {
+  -moz-binding: url(chrome://global/content/bindings/menu.xml#menu);
+}
+
+#mainToolbox > *:not([id="blistMenubar"]) {
+  -moz-appearance: toolbox;
+}
+#mainToolbox > #blistMenubar + * {
+  border-top: 1px inset;
+}
+
+.bucktooth-stack {
+  -moz-appearance: -moz-window-titlebar;
+  -moz-box-flex: 1;
+}
+
+.bucktooth-titlebar {
+}
+
+.bucktooth-menubar {
+  -moz-box-pack: start;
+  -moz-box-align: start;
+}
+
+.bucktooth-spacer {
+  -moz-box-flex: 1;
+}
+
+.bucktooth-button {
+  -moz-appearance: none;
+  margin: -1px 0 0 16px;
+  padding: 0;
+  background: -moz-linear-gradient(hsl(36,91%,65%), hsl(26,91%,44%) 95%);
+  background-clip: padding-box;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid rgba(83,42,6,.9);
+  border-top: none;
+  box-shadow: 0 1px 0 1px rgba(255,255,255,.25) inset,
+              0 0   0 1px rgba(255,255,255,.25) inset;
+  color: white;
+  text-shadow: 0 0     1px rgba(0, 0, 0, .7),
+               0 1px 1.5px rgba(0, 0, 0, .5);
+  font-weight: bold;
+}
+.bucktooth-button > .button-box {
+    padding: 0 12px 2px 18px;
+}
+.bucktooth-button > .button-box > .button-menu-dropmarker {
+  list-style-image: none;
+  border: 6px solid transparent;
+  -moz-border-top-colors: transparent transparent transparent white;
+  margin: 2px 0 -5px 2px;
+  border-radius: 0, 0, 63360in, 63360in;
+}
+.bucktooth-button:focus,
+.bucktooth-button:active {
+  outline: none;
+}
+.bucktooth-button:hover,
+.bucktooth-button[open] {
+  background: -moz-linear-gradient(hsl(36,91%,70%), hsl(26,91%,49%) 95%);
+  text-shadow: 0 0     1px rgba(0, 0, 0, .9),
+               0 1px 1.5px rgba(0, 0, 0, .5);
+  box-shadow: 0 1px 0   1px rgba(255,255,255,.25) inset,
+              0 0   0   1px rgba(255,255,255,.25) inset,
+              0 0   5px 1px rgba(255,255,255,.3);
+}
+
+@media screen and (-moz-windows-compositor) and (-moz-windows-default-theme) {
+  .bucktooth-buttonbar {
+    visibility: collapse;
+  }
+}
+
+.bucktooth-buttonbar {
+  -moz-box-pack: end;
+  -moz-box-align: start;
+  -moz-appearance: -moz-window-button-box;
+}
+.bucktooth-buttonmin {
+  -moz-appearance: -moz-window-button-minimize;
+}
+.bucktooth-buttonmax {
+  -moz-appearance: -moz-window-button-maximize;
+}
+:root[sizemode="maximized"] .bucktooth-buttonmax {
+  -moz-appearance: -moz-window-button-restore;
+}
+.bucktooth-buttonclose {
+  -moz-appearance: -moz-window-button-close;
+}

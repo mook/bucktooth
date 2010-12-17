@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE bindings PUBLIC "-//MOZILLA//DTD XBL V1.0//EN"
+                          "http://www.mozilla.org/xbl" [
+    <!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">
+    %brandDTD;
+  ]>
+
+<bindings
+    xmlns="http://www.mozilla.org/xbl"
+    xmlns:xbl="http://www.mozilla.org/xbl"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <binding id="menu-button">
+    <content>
+      <stack class="bucktooth-stack"
+             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+        <titlebar class="bucktooth-titlebar"/>
+        <hbox mousethrough="always" class="bucktooth-buttonbar">
+          <hbox class="bucktooth-buttonbox">
+            <toolbarbutton class="bucktooth-buttonmin" mousethrough="never"/>
+            <toolbarbutton class="bucktooth-buttonmax" mousethrough="never"/>
+            <toolbarbutton class="bucktooth-buttonclose" mousethrough="never"/>
+          </hbox>
+        </hbox>
+        <hbox mousethrough="always" class="bucktooth-menubar">
+          <button type="menu"
+                  label="&brandShortName;"
+                  mousethrough="never"
+                  class="bucktooth-button">
+            <menupopup>
+              <xbl:children/>
+            </menupopup>
+          </button>
+        </hbox>
+      </stack>
+    </content>
+
+    <implementation>
+      <constructor>
+      <![CDATA[
+        document.documentElement.setAttribute("chromemargin", "0, -1, -1 ,-1");
+      ]]>
+      </constructor>
+    </implementation>
+
+    <handlers>
+    </handlers>
+  </binding>
+
+</bindings>
