@@ -102,7 +102,7 @@
 .bucktooth-buttonmax {
   -moz-appearance: -moz-window-button-maximize;
 }
-:root[sizemode="maximized"] .bucktooth-buttonmax {
+#blistMenubar[sizemode="maximized"] .bucktooth-buttonmax {
   -moz-appearance: -moz-window-button-restore;
 }
 .bucktooth-buttonclose {
