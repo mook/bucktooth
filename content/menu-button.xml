@@ -16,9 +16,15 @@
              xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
         <titlebar class="bucktooth-titlebar"/>
         <hbox class="bucktooth-buttonbar" mousethrough="always">
-          <toolbarbutton class="bucktooth-buttonmin" mousethrough="never"/>
-          <toolbarbutton class="bucktooth-buttonmax" mousethrough="never"/>
-          <toolbarbutton class="bucktooth-buttonclose" mousethrough="never"/>
+          <toolbarbutton class="bucktooth-buttonmin"
+                         mousethrough="never"
+                         oncommand="return minimize()"/>
+          <toolbarbutton class="bucktooth-buttonmax"
+                         mousethrough="never"
+                         oncommand="return maximize()"/>
+          <toolbarbutton class="bucktooth-buttonclose"
+                         mousethrough="never"
+                         oncommand="return close()"/>
         </hbox>
         <hbox mousethrough="always" class="bucktooth-menubar">
           <button type="menu"
@@ -62,6 +68,48 @@
                                 false);
       ]]>
       </constructor>
+
+      <method name="minimize">
+        <body>
+        <![CDATA[
+          window.minimize();
+        ]]>
+        </body>
+      </method>
+
+      <method name="maximize">
+        <body>
+        <![CDATA[
+          if (window.windowState == window.STATE_NORMAL) {
+            window.maximize();
+          }
+          else {
+            window.restore();
+          }
+        ]]>
+        </body>
+      </method>
+
+      <method name="close">
+        <body>
+        <![CDATA[
+          var event = document.createEvent("mouseevent")
+                              .QueryInterface(Components.interfaces
+                                                        .nsIDOMMouseEvent);
+          event.initMouseEvent("close",
+                               true,
+                               true,
+                               window,
+                               0,
+                               0, 0,
+                               0, 0,
+                               false, false, false, false,
+                               0,
+                               window);
+          window.dispatchEvent(event);
+        ]]>
+        </body>
+      </method>
     </implementation>
   </binding>
 
