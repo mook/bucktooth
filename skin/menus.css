@@ -6,6 +6,7 @@
 #mainToolbox {
   -moz-appearance: none;
   background: transparent;
+  border-top: none;
 }
 
 #mainToolbox #blistMenubar {
@@ -47,7 +48,7 @@
 
 .bucktooth-button {
   -moz-appearance: none;
-  margin: -2px 0 0 16px;
+  margin: 1px 0 0 0;
   padding: 0;
   background: -moz-linear-gradient(hsl(208,91%,32%), hsl(198,91%,20%) 95%);
   background-clip: padding-box;
@@ -83,6 +84,10 @@
   box-shadow: 0 1px 0   1px rgba(255,255,255,.25) inset,
               0 0   0   1px rgba(255,255,255,.25) inset,
               0 0   5px 1px rgba(255,255,255,.3);
+}
+#blistMenubar[sizemode="maximized"] .bucktooth-button {
+  margin-top: 0;
+  margin-left: 4px;
 }
 
 @media screen and (-moz-windows-compositor) and (-moz-windows-default-theme) {
