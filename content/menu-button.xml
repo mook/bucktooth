@@ -66,6 +66,13 @@
                                   self.setAttribute("sizemode",
                                                     SIZE_MAP[window.windowState]),
                                 false);
+
+        var button = document.getAnonymousElementByAttribute(this,
+                                                             "class",
+                                                             "bucktooth-button");
+        window.addEventListener("DOMMenuBarActive",
+                                function() button.open = true,
+                                false);
       ]]>
       </constructor>
 
